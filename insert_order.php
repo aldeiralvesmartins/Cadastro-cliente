@@ -51,15 +51,17 @@
 
 
 
-if (!empty($_POST['description']) && !empty($_POST['amount'])){
+if (!empty($_POST['description']) && !empty($_POST['amount']) && !empty($_POST['data'])){
 
     $description = $_POST['description'];
     $amount = $_POST['amount'];
+    $data = $_POST['data'];
     $customer_id = $_SESSION['id'];
+    
        
-    $conexao = mysqli_connect("localhost:3306","r2soft","r2147258369","app_db") or print (mysqli_error($e));
+    $conexao = mysqli_connect("localhost:3306","r2soft","r2147258369","app_db") or print (mysqli_error($conexao));
 
-    $query = "INSERT INTO orders (description,amount,customer_id) VALUES ('$description','$amount', '$customer_id')";
+    $query = "INSERT INTO orders (description,amount,customer_id,data) VALUES ('$description','$amount', '$customer_id','$data')";
 
     if (mysqli_query($conexao, $query)) {  
         header("Location: home.php?msg=OK");
@@ -89,6 +91,12 @@ if (!empty($_POST['description']) && !empty($_POST['amount'])){
           <div class="col-md-4 mb-3">
             <label for="emailInputLabel">Amount:</label>
             <input type="text" class="form-control" id="emailInputLabel" name = "amount">
+          </div>
+        </div>   
+        <div class="form-group">
+          <div class="col-md-4 mb-3">
+            <label for="emailInputLabel">data:</label>
+            <input type="date" class="form-control" id="emailInputLabel" name = "data">
           </div>
         </div>   
       

@@ -86,7 +86,7 @@ $id = $_SESSION['id'];
 
 
 
-$query = "SELECT id,description,amount, customer_id FROM orders WHERE customer_id =$id";
+$query = "SELECT id,description,amount, customer_id, data FROM orders WHERE customer_id =$id";
 
 $resultado = mysqli_query($conexao,$query);
 
@@ -99,6 +99,7 @@ $resultado = mysqli_query($conexao,$query);
       <th scope="col">#</th>
       <th scope="col">Description</th>
       <th scope="col">Amount</th>
+      <th scope="col">Data</th>
       <th scope="col"><th>
       <th scope="col"><th>
     
@@ -112,7 +113,9 @@ $resultado = mysqli_query($conexao,$query);
 while($linha = mysqli_fetch_array($resultado)){
     echo "<tr> <td>".$linha['id']."</td>
     <td>".$linha['description']."</td>
-    <td>".$linha['amount']."</td>";
+    <td>".$linha['amount']."</td>
+    <td>".$linha['data']."</td>"
+    ;
     ?>
 
     <td>

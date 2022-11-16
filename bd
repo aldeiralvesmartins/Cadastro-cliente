@@ -14,7 +14,7 @@ CREATE TABLE `orders` (
   `description` VARCHAR( 255 ) NOT NULL,
   `amount` DOUBLE NOT NULL,
   `customer_id` INT NOT NULL,
-  'data' datetime
+  'data' datetime not null
 
 )
  ENGINE=InnoDB DEFAULT CHARSET=latin1;

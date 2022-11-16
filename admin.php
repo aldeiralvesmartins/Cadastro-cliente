@@ -95,6 +95,7 @@ while($linha = mysqli_fetch_array($resultado)){
             <th scope="col">#</th>
             <th scope="col">Description</th>
             <th scope="col">Amount</th>
+            <th scope="col">data</th>
 
           </tr>
         </thead>
@@ -105,7 +106,8 @@ while($linha = mysqli_fetch_array($resultado)){
     while($orderLine = mysqli_fetch_array($resultOrder)){
       echo "<tr> <td>".$orderLine['id']."</td>
       <td>".$orderLine['description']."</td>
-      <td>".$orderLine['amount']."</td></tr>";
+      <td>".$orderLine['amount']."</td>
+      <td>".$orderLine['data']."</td></tr>";
 
     }
 
