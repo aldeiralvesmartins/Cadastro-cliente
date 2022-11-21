@@ -55,7 +55,7 @@ if(!empty($_POST["codeUpdating"])){
     $amount = $_POST['amount'];
     $order_id = $_POST['codeUpdating'];
   
-    $conexao = mysqli_connect("localhost:3306","r2soft","r2147258369","app_db") or print (mysqli_error($e));
+    $conexao = mysqli_connect("") or print (mysqli_error($e));
     
     $query = "UPDATE orders SET description='$description', amount='$amount'  WHERE id=$order_id";
      if (mysqli_query($conexao, $query)) {
@@ -78,7 +78,7 @@ if(!empty($_POST["codeUpdating"])){
 
 if (!empty($_POST["dataForUpdating"])){
     $order_id = $_POST['dataForUpdating'];
-    $conexao = mysqli_connect("localhost:3306","r2soft","r2147258369","app_db") or print (mysqli_error($conexao));
+    $conexao = mysqli_connect() or print (mysqli_error($conexao));
 
     $query = "SELECT id,description,amount FROM orders WHERE id=$order_id";
     $resultado = mysqli_query($conexao,$query);  
