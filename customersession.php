@@ -4,7 +4,7 @@ session_start();
 $email = $_POST['email'];
 $passwd  = md5($_POST['password']);
 
-$conexao = mysqli_connect("localhost:3306","r2soft","r2147258369","app_db") or print (mysqli_error($conexao));
+$conexao = mysqli_connect("") or print (mysqli_error($conexao));
 
 $query = "SELECT * FROM customers WHERE email='$email' and passwd= '$passwd'";
 
