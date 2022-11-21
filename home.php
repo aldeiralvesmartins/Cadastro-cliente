@@ -69,7 +69,7 @@
 
 
 <?php
-$conexao = mysqli_connect("localhost:3306","r2soft","r2147258369","app_db") or print (mysqli_error($conexao));
+$conexao = mysqli_connect("") or print (mysqli_error($conexao));
 // test if admin or normal customer to redirect a suitable page.
 
 
