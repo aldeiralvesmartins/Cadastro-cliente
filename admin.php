@@ -49,7 +49,7 @@
 
 
 <?php
-$conexao = mysqli_connect("localhost:3306","r2soft","r2147258369","app_db") or print (mysqli_error($e));
+$conexao = mysqli_connect("") or print (mysqli_error($e));
  
  
 $id = $_SESSION['id'];
