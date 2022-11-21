@@ -5,7 +5,7 @@ $passwd  = md5($_POST['passwd']);
 $data = $_POST['data'];
 
  
-$conexao = mysqli_connect("localhost:3306","r2soft","r2147258369","app_db") or print (mysqli_error($conexao));
+$conexao = mysqli_connect() or print (mysqli_error($conexao));
 
 $query = "INSERT INTO customers (name,email,passwd,data) VALUES ('$name','$email', '$passwd','$data')";
 
